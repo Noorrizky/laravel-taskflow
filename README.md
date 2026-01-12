@@ -1,4 +1,4 @@
-# [Project Name]
+# Taskflow
 
 A real-time web application built with **Laravel** and **Laravel Reverb**.
 
@@ -21,7 +21,7 @@ Before you begin, ensure you have met the following requirements:
 
 1.  **Clone the repository**
     ```bash
-    git clone https://github.com/yourusername/repo-name.git
+    git clone https://github.com/noorrizky/laravel-taskflow.git
     cd repo-name
     ```
 
@@ -75,7 +75,7 @@ Note: Do not set VITE_REVERB_HOST to 0.0.0.0 locally, or the browser connection 
 
 ## 🏃‍♂️ Running the Application
 
-To run the application locally, you need to run three separate processes:
+**To run the application locally, you need to run three separate processes:**
 
 1. Start the Laravel Server
 ```bash
