@@ -1,3 +1,5 @@
+Markdown
+
 # [Project Name]
 
 A real-time web application built with **Laravel** and **Laravel Reverb**.
@@ -21,7 +23,7 @@ Before you begin, ensure you have met the following requirements:
 
 1.  **Clone the repository**
     ```bash
-    git clone [https://github.com/yourusername/repo-name.git](https://github.com/yourusername/repo-name.git)
+    git clone https://github.com/yourusername/repo-name.git
     cd repo-name
     ```
 
@@ -71,7 +73,7 @@ VITE_REVERB_HOST="localhost"
 VITE_REVERB_PORT="${REVERB_PORT}"
 VITE_REVERB_SCHEME="${REVERB_SCHEME}"
 
-Note: Do not set VITE_REVERB_HOST to 0.0.0.0 locally, or the browser connection will fail.
+    Note: Do not set VITE_REVERB_HOST to 0.0.0.0 locally, or the browser connection will fail.
 
 🏃‍♂️ Running the Application
 
