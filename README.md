@@ -73,7 +73,7 @@ VITE_REVERB_SCHEME="${REVERB_SCHEME}"
 ```
 Note: Do not set VITE_REVERB_HOST to 0.0.0.0 locally, or the browser connection will fail.
 
-🏃‍♂️ Running the Application
+## 🏃‍♂️ Running the Application
 
 To run the application locally, you need to run three separate processes:
 
