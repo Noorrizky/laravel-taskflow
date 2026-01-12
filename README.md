@@ -1,59 +1,104 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# [Project Name]
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A real-time web application built with **Laravel** and **Laravel Reverb**.
 
-## About Laravel
+## 🚀 Technologies
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-   **Backend:** Laravel 11.x
+-   **Frontend:** Blade / Vue / React (Vite)
+-   **WebSockets:** Laravel Reverb
+-   **Database:** MySQL / SQLite
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📋 Prerequisites
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Before you begin, ensure you have met the following requirements:
 
-## Learning Laravel
+-   PHP >= 8.2
+-   Composer
+-   Node.js & NPM
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 🛠 Installation
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1.  **Clone the repository**
+    ```bash
+    git clone [https://github.com/yourusername/repo-name.git](https://github.com/yourusername/repo-name.git)
+    cd repo-name
+    ```
 
-## Laravel Sponsors
+2.  **Install PHP dependencies**
+    ```bash
+    composer install
+    ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+3.  **Install Node dependencies**
+    ```bash
+    npm install
+    ```
 
-### Premium Partners
+4.  **Environment Setup**
+    Copy the example environment file and configure your variables.
+    ```bash
+    cp .env.example .env
+    ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+5.  **Generate App Key**
+    ```bash
+    php artisan key:generate
+    ```
 
-## Contributing
+6.  **Database Migration**
+    ```bash
+    php artisan migrate
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 📡 Reverb (WebSocket) Configuration
 
-## Code of Conduct
+This project uses Laravel Reverb for real-time broadcasting. You must configure your `.env` file correctly for the browser to connect.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Open your `.env` file and ensure the Reverb section looks like this:
 
-## Security Vulnerabilities
+```ini
+REVERB_APP_ID=my-app-id
+REVERB_APP_KEY=my-app-key
+REVERB_APP_SECRET=my-app-secret
+REVERB_HOST="0.0.0.0"
+REVERB_PORT=8080
+REVERB_SCHEME=http
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# IMPORTANT: VITE_REVERB_HOST must be reachable by the browser (e.g., localhost)
+VITE_REVERB_APP_KEY="${REVERB_APP_KEY}"
+VITE_REVERB_HOST="localhost"
+VITE_REVERB_PORT="${REVERB_PORT}"
+VITE_REVERB_SCHEME="${REVERB_SCHEME}"
 
-## License
+ote: Do not set VITE_REVERB_HOST to 0.0.0.0 locally, or the browser connection will fail.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+🏃‍♂️ Running the Application
+
+To run the application locally, you need to run three separate processes:
+
+    Start the Laravel Server
+    Bash
+
+php artisan serve
+
+Start the Vite Development Server (for assets and frontend HMR)
+Bash
+
+npm run dev
+
+Start the Reverb WebSocket Server
+Bash
+
+    php artisan reverb:start
+
+Access the application at http://localhost:8000.
+🐛 Troubleshooting
+
+WebSocket connection failed / interrupted:
+
+    Ensure php artisan reverb:start is running.
+
+    Check your .env file: VITE_REVERB_HOST should be localhost, while REVERB_HOST can remain 0.0.0.0.
+
+    After changing .env, restart npm run dev to reload the environment variables.
