@@ -1,5 +1,3 @@
-Markdown
-
 # [Project Name]
 
 A real-time web application built with **Laravel** and **Laravel Reverb**.
@@ -71,36 +69,19 @@ REVERB_SCHEME=http
 VITE_REVERB_APP_KEY="${REVERB_APP_KEY}"
 VITE_REVERB_HOST="localhost"
 VITE_REVERB_PORT="${REVERB_PORT}"
-VITE_REVERB_SCHEME="${REVERB_SCHEME}"
-
-    Note: Do not set VITE_REVERB_HOST to 0.0.0.0 locally, or the browser connection will fail.
+VITE_REVERB_SCHEME="${REVERB_SCHEME}"```
+Note: Do not set VITE_REVERB_HOST to 0.0.0.0 locally, or the browser connection will fail.
 
 🏃‍♂️ Running the Application
 
 To run the application locally, you need to run three separate processes:
 
-    Start the Laravel Server
-    Bash
+1. Start the Laravel Server
+```php artisan serve```
 
-php artisan serve
+2. Start the Vite Development Server (for assets and frontend HMR)
+```npm run dev```
 
-Start the Vite Development Server (for assets and frontend HMR)
-Bash
-
-npm run dev
-
-Start the Reverb WebSocket Server
-Bash
-
-    php artisan reverb:start
-
-Access the application at http://localhost:8000.
-🐛 Troubleshooting
-
-WebSocket connection failed / interrupted:
-
-    Ensure php artisan reverb:start is running.
-
-    Check your .env file: VITE_REVERB_HOST should be localhost, while REVERB_HOST can remain 0.0.0.0.
-
-    After changing .env, restart npm run dev to reload the environment variables.
+3. Start the Reverb WebSocket Server
+```php artisan reverb:start```
+Access the application at http://localhost:8000
