@@ -69,7 +69,8 @@ REVERB_SCHEME=http
 VITE_REVERB_APP_KEY="${REVERB_APP_KEY}"
 VITE_REVERB_HOST="localhost"
 VITE_REVERB_PORT="${REVERB_PORT}"
-VITE_REVERB_SCHEME="${REVERB_SCHEME}"```
+VITE_REVERB_SCHEME="${REVERB_SCHEME}"
+```
 Note: Do not set VITE_REVERB_HOST to 0.0.0.0 locally, or the browser connection will fail.
 
 🏃‍♂️ Running the Application
@@ -77,11 +78,17 @@ Note: Do not set VITE_REVERB_HOST to 0.0.0.0 locally, or the browser connection 
 To run the application locally, you need to run three separate processes:
 
 1. Start the Laravel Server
-```php artisan serve```
+```bash
+php artisan serve
+```
 
 2. Start the Vite Development Server (for assets and frontend HMR)
-```npm run dev```
+```bash
+npm run dev
+```
 
-3. Start the Reverb WebSocket Server
-```php artisan reverb:start```
+4. Start the Reverb WebSocket Server
+```bash
+php artisan reverb:start
+```
 Access the application at http://localhost:8000
