@@ -2,13 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory; // <--- ADD THIS
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Project extends Model
 {
-    // Allow mass assignment for these fields
+    use HasFactory; // <--- ADD THIS inside the class
+
     protected $fillable = ['name', 'slug', 'description', 'status', 'user_id'];
 
     public function tasks(): HasMany
