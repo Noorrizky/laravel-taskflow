@@ -71,7 +71,7 @@ VITE_REVERB_HOST="localhost"
 VITE_REVERB_PORT="${REVERB_PORT}"
 VITE_REVERB_SCHEME="${REVERB_SCHEME}"
 
-ote: Do not set VITE_REVERB_HOST to 0.0.0.0 locally, or the browser connection will fail.
+Note: Do not set VITE_REVERB_HOST to 0.0.0.0 locally, or the browser connection will fail.
 
 🏃‍♂️ Running the Application
 
